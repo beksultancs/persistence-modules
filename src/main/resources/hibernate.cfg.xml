@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+<!--        database connection settings-->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5678/postgres</property>
+<!--        I'm using postgre app then I don't need username and password for connection -->
+<!--        if you have username & password then use this configuration properties -->
+<!--        <property name="hibernate.connection.username">postgres</property>-->
+<!--        <property name="hibernate.connection.password">postgres</property>-->
+
+<!--        SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
+
+<!--        to show all queries -->
+        <property name="hibernate.show_sql">true</property>
+
+<!--        DROP or RE-CREATE the database schema on startup-->
+        <property name="hibernate.hbm2ddl.auto">create</property>
+
+<!--        all entity classes -->
+        <mapping class="peaksoft.entities.SuperHero"/>
+
+    </session-factory>
+</hibernate-configuration>
